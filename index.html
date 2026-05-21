@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kwiaty Jadalne</title>
+    <link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="images/logo.svg">
+</head>
+
+<body>
+<div class="navbar">
+
+    <div class="title">
+        <img src="images/text.webp" alt="title">
+    </div>
+
+
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+
+    <div class="filtry-wrapper" id="menu">
+
+        <div class="filtry" id="filtry">
+
+            <div class="grupa aktywna" id="typy">
+
+                <button onclick="filtrujTyp('wszystkie')">Wszystkie</button>
+                <button onclick="filtrujTyp('kwiaty jednoroczne')">Jednoroczne</button>
+                <button onclick="filtrujTyp('kwiaty dwuletnie')">Dwuletnie</button>
+                <button onclick="filtrujTyp('byliny')">Byliny</button>
+                <button onclick="filtrujTyp('krzewy')">Krzewy</button>
+                <button onclick="filtrujTyp('drzewa')">Drzewa</button>
+
+            </div>
+
+            <div class="grupa" id="miesiace">
+
+                <button onclick="przelaczMiesiac('marzec', this)">Marzec</button>
+                <button onclick="przelaczMiesiac('kwiecień', this)">Kwiecień</button>
+                <button onclick="przelaczMiesiac('maj', this)">Maj</button>
+                <button onclick="przelaczMiesiac('czerwiec', this)">Czerwiec</button>
+                <button onclick="przelaczMiesiac('lipiec', this)">Lipiec</button>
+                <button onclick="przelaczMiesiac('sierpień', this)">Sierpień</button>
+                <button onclick="przelaczMiesiac('wrzesień', this)">Wrzesień</button>
+
+            </div>
+
+            <button class="toggle" onclick="toggleFiltry()">Miesiące ▼</button>
+
+        </div>
+    </div>
+
+    <input type="text" id="szukaj" list="kwiaty-lista" placeholder="Szukaj kwiatu...">
+    <datalist id="kwiaty-lista"></datalist>
+
+</div>
+
+    <div id="kwiaty-container" class="grid"></div>
+
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>⚠️ Uwaga! ⚠️</h2>
+
+        <p>Spożywaj wyłącznie kwiaty pochodzące z miejsc, co do których masz pewność ich bezpieczeństwa.
+
+Upewnij się, że prawidłowo rozpoznałeś roślinę.
+
+W przypadku gatunków występujących w wielu odmianach sprawdź, czy dana odmiana jest jadalna.
+
+Strona dotyczy wyłącznie jadalnych kwiatów — przed spożyciem innych części rośliny upewnij się, że są one bezpieczne.</p>
+
+        <button onclick="zamknijPopup()">Rozumiem</button>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+
+<div id="popup-kwiat" class="popup-kwiat">
+
+    <button class="zamknij-popup"
+            onclick="zamknijPopupKwiatu()">
+        ← Powrót
+    </button>
+
+    <div class="popup-kwiat-content">
+
+        <div class="popup-zdjecie">
+            <img id="popup-img" src="" alt="">
+        </div>
+
+        <div class="popup-info">
+
+            <h1 id="popup-nazwa"></h1>
+
+            <p id="popup-smak"></p>
+
+            <p id="popup-kwitnienie"></p>
+
+            <p id="popup-opis"></p>
+
+            <p id="popup-przygotowanie"></p>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
