@@ -208,7 +208,7 @@ body {
 body.zamrozone {
     overflow: hidden;
 }
-body.kwiat-tryb #szukaj {
+body.kwiat-tryb #search-wrapper {
     display: none;
 }
 body.kwiat-tryb #menu {
